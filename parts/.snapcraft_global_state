@@ -1,0 +1,7 @@
+!GlobalState
+assets:
+  build-packages: []
+  build-snaps:
+  - go=10866
+  - core20=2496
+  required-grade: stable

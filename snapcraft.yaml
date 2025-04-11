@@ -1,4 +1,4 @@
-name: smc
+name: pocketstore
 version: '0.0.0.1'
 summary: A simple "Hello, World!" Go app
 description: |
@@ -9,16 +9,16 @@ confinement: strict
 grade: devel
 
 apps:
-  smc:
-    command: smc
+  pocketstore:
+    command: pocketstore
     plugs:
       - home
 
 parts:
-  smc:
+  pocketstore:
     plugin: go
-    source: https://github.com/certbot-io/snap.git
+    source: .
     source-type: git
     override-build: |
-      go build -o smc  # Build binary
-      install -Dm755 smc $SNAPCRAFT_PART_INSTALL/smc
+      go build -o pocketstore  # Build binary
+      install -Dm755 pocketstore $SNAPCRAFT_PART_INSTALL/pocketstore

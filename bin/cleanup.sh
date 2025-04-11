@@ -1,3 +1,3 @@
 #!/bin/bash
 
-snapcraft clean smc
+snapcraft clean pocketstore
