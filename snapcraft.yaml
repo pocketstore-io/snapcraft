@@ -14,8 +14,6 @@ apps:
     plugs:
       - home
       - docker
-      - git-ubuntu
-
 parts:
   pocketstore:
     plugin: go
