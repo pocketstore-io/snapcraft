@@ -1,0 +1,24 @@
+name: smc
+version: '0.0.0.1'
+summary: A simple "Hello, World!" Go app
+description: |
+  A simple Go program that prints "Hello, World!" to the console.
+
+base: core20
+confinement: strict
+grade: devel
+
+apps:
+  smc:
+    command: smc
+    plugs:
+      - home
+
+parts:
+  smc:
+    plugin: go
+    source: https://github.com/certbot-io/snap.git
+    source-type: git
+    override-build: |
+      go build -o smc  # Build binary
+      install -Dm755 smc $SNAPCRAFT_PART_INSTALL/smc
