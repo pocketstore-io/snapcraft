@@ -10,14 +10,15 @@ grade: devel
 
 apps:
   pocketstore:
-    command: pocketstore
+    command: pocketstore    
     plugs:
       - home
+      - docker
 
 parts:
   pocketstore:
     plugin: go
-    source: .
+    source: https://github.com/pocketstore-io/snapcraft.git
     source-type: git
     override-build: |
       go build -o pocketstore  # Build binary
